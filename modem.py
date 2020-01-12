@@ -1,6 +1,6 @@
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
-from selenium.common.exceptions import TimeoutException, StaleElementReferenceException
+from selenium.common.exceptions import TimeoutException, StaleElementReferenceException, WebDriverException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
@@ -860,9 +860,7 @@ class Graf(tk.Frame):
                     "UPOZORENJE", """            ZBOG DIJELJENOG OKRUŽENJA WIFI TEHNOLOGIJE, OVA
             KOMBINACIJA INTERFEJSA, MOŽE DOVESTI DO ISPADA 
             APLIKACIJE, POSEBNO U SLUČAJU IZRAZITOG ZAGUŠENJA 
-            LINKA.
-            TAKOĐE U ZAVISNOSTI OD TIPA MODEMA, OVA KOMBINACIJA
-            MOŽE DOVESTI DO ODSTUPANJA U MJERENJU OD: < ~40kbit/s.""")
+            LINKA.""")
 
         # INDEX ODREDJUJE ETHERNET ILI WIFI
         if self.index == 0:
@@ -1128,9 +1126,11 @@ class GrafHG8245H5(Graf):
             self.size = self.calculate_overhead()
 
         except StaleElementReferenceException as e:
-            messagebox.showerror(
-                "ERROR", "STALEELEMENT ERROR OCURED: \n" + str(e))
-            self.stop_grafh()
+            #print("STALEELEMENT ERROR OCURED"+str(e))
+            pass
+        except WebDriverException as e:
+            #print("WEBDRIVER: "+str(e))
+            pass
 
         except TimeoutException as e:
             messagebox.showerror("ERROR", "TIMEOUT ERROR OCURED: \n" + str(e))
@@ -1163,9 +1163,11 @@ class GrafHG8245H5(Graf):
             self.size = self.calculate_overhead()
 
         except StaleElementReferenceException as e:
-            messagebox.showerror(
-                "ERROR", "STALEELEMENT ERROR OCURED: \n" + str(e))
-            self.stop_grafh()
+            #print("STALEELEMENT ERROR OCURED"+str(e))
+            pass
+        except WebDriverException as e:
+            #print("WEBDRIVER: "+str(e))
+            pass
 
         except TimeoutException as e:
             messagebox.showerror("ERROR", "TIMEOUT ERROR OCURED: \n" + str(e))
@@ -1330,9 +1332,12 @@ class GrafHG8245H(Graf):
             self.size = self.calculate_overhead()
 
         except StaleElementReferenceException as e:
-            messagebox.showerror(
-                "ERROR", "STALEELEMENT ERROR OCURED: \n" + str(e))
-            self.stop_grafh()
+            #print("STALEELEMENT ERROR OCURED"+str(e))
+            pass
+       
+        except WebDriverException as e:
+            #print("WEBDRIVER: "+str(e))
+            pass
 
         except TimeoutException as e:
             messagebox.showerror("ERROR", "TIMEOUT ERROR OCURED: \n" + str(e))
@@ -1366,10 +1371,11 @@ class GrafHG8245H(Graf):
             self.size = self.calculate_overhead()
         
         except StaleElementReferenceException as e:
-            messagebox.showerror(
-                "ERROR", "STALEELEMENT ERROR OCURED: \n" + str(e))
-            self.stop_grafh()
-
+            #print("STALEELEMENT ERROR OCURED"+str(e))
+            pass
+        except WebDriverException as e:
+            #print("WEBDRIVER: "+str(e))
+            pass
         except TimeoutException as e:
             messagebox.showerror("ERROR", "TIMEOUT ERROR OCURED: \n" + str(e))
             self.stop_grafh()
@@ -1511,9 +1517,11 @@ class GrafZTE_H267N(Graf):
             btn_eth_refresh.click()
 
         except StaleElementReferenceException as e:
-            messagebox.showerror(
-                "ERROR", "STALEELEMENT ERROR OCURED: \n" + str(e))
-            self.stop_grafh()
+            #print("STALEELEMENT ERROR OCURED"+str(e))
+            pass
+        except WebDriverException as e:
+            #print("WEBDRIVER: "+str(e))
+            pass
 
         except TimeoutException as e:
             messagebox.showerror("ERROR", "TIMEOUT ERROR OCURED: \n" + str(e))
@@ -1540,9 +1548,11 @@ class GrafZTE_H267N(Graf):
             btn_wlan_refresh.click() 
 
         except StaleElementReferenceException as e:
-            messagebox.showerror(
-                "ERROR", "STALEELEMENT ERROR OCURED: \n" + str(e))
-            self.stop_grafh()
+            #print("STALEELEMENT ERROR OCURED"+str(e))
+            pass
+        except WebDriverException as e:
+            #print("WEBDRIVER: "+str(e))
+            pass
 
         except TimeoutException as e:
             messagebox.showerror("ERROR", "TIMEOUT ERROR OCURED: \n" + str(e))
