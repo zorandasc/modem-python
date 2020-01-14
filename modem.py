@@ -1128,13 +1128,15 @@ class GrafHG8245H5(Graf):
         except StaleElementReferenceException as e:
             #print("STALEELEMENT ERROR OCURED"+str(e))
             pass
-        except WebDriverException as e:
-            #print("WEBDRIVER: "+str(e))
-            pass
+        
 
         except TimeoutException as e:
             messagebox.showerror("ERROR", "TIMEOUT ERROR OCURED: \n" + str(e))
             self.stop_grafh()
+        except WebDriverException as e:
+            #print("WEBDRIVER: "+str(e))
+            pass
+
 
     def getWlanInfo(self):
 
@@ -1165,13 +1167,16 @@ class GrafHG8245H5(Graf):
         except StaleElementReferenceException as e:
             #print("STALEELEMENT ERROR OCURED"+str(e))
             pass
-        except WebDriverException as e:
-            #print("WEBDRIVER: "+str(e))
-            pass
+        
 
         except TimeoutException as e:
             messagebox.showerror("ERROR", "TIMEOUT ERROR OCURED: \n" + str(e))
             self.stop_grafh()
+
+        except WebDriverException as e:
+            #print("WEBDRIVER: "+str(e))
+            pass
+
 
     def back(self):
         self.stop_grafh()
@@ -1334,15 +1339,12 @@ class GrafHG8245H(Graf):
         except StaleElementReferenceException as e:
             #print("STALEELEMENT ERROR OCURED"+str(e))
             pass
-       
-        except WebDriverException as e:
-            #print("WEBDRIVER: "+str(e))
-            pass
-
         except TimeoutException as e:
             messagebox.showerror("ERROR", "TIMEOUT ERROR OCURED: \n" + str(e))
             self.stop_grafh()
-
+        except WebDriverException as e:
+            #print("WEBDRIVER: "+str(e))
+            pass
         return
 
     def getWlanInfo(self):
@@ -1373,12 +1375,14 @@ class GrafHG8245H(Graf):
         except StaleElementReferenceException as e:
             #print("STALEELEMENT ERROR OCURED"+str(e))
             pass
-        except WebDriverException as e:
-            #print("WEBDRIVER: "+str(e))
-            pass
+        
         except TimeoutException as e:
             messagebox.showerror("ERROR", "TIMEOUT ERROR OCURED: \n" + str(e))
             self.stop_grafh()
+        
+        except WebDriverException as e:
+            #print("WEBDRIVER: "+str(e))
+            pass
         return
 
 
@@ -1519,13 +1523,15 @@ class GrafZTE_H267N(Graf):
         except StaleElementReferenceException as e:
             #print("STALEELEMENT ERROR OCURED"+str(e))
             pass
-        except WebDriverException as e:
-            #print("WEBDRIVER: "+str(e))
-            pass
+        
 
         except TimeoutException as e:
             messagebox.showerror("ERROR", "TIMEOUT ERROR OCURED: \n" + str(e))
             self.stop_grafh()
+
+        except WebDriverException as e:
+            #print("WEBDRIVER: "+str(e))
+            pass
         return
 
     def getWlanInfo(self):
@@ -1550,13 +1556,15 @@ class GrafZTE_H267N(Graf):
         except StaleElementReferenceException as e:
             #print("STALEELEMENT ERROR OCURED"+str(e))
             pass
-        except WebDriverException as e:
-            #print("WEBDRIVER: "+str(e))
-            pass
+        
 
         except TimeoutException as e:
             messagebox.showerror("ERROR", "TIMEOUT ERROR OCURED: \n" + str(e))
             self.stop_grafh()
+
+        except WebDriverException as e:
+            #print("WEBDRIVER: "+str(e))
+            pass
         return
 
 
